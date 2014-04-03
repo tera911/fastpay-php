@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Date: Wed, 05 Mar 2014 08:36:31 GMT
+P3P: policyref="http://privacy.yahoo.co.jp/w3c/p3p_jp.xml", CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Cache-Control: private
+Vary: Accept-Encoding
+Content-Length: 441
+Content-Type: application/json
+Age: 2
+Connection: keep-alive
+
+{"id":"ch_4Iv1CIKeIJQiF1Yg1tjWZejT","object":"charge","livemode":false,"currency":"jpy","description":"fastpay@example.com","amount":400,"amount_refunded":null,"created":1394008206,"paid":true,"refunded":false,"failure_message":null,"card":{"id":"card_5DXEdDleqBuQPWTcv9L231DE","object":"card","last4":"4242","type":"Visa","exp_month":11,"exp_year":2019,"fingerprint":"022e2184e3b910cd0d96b89d4ba1d9e3a97139b7"},"captured":true,"refunds":[]}

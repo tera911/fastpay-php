@@ -1,0 +1,103 @@
+{
+  "name": "fastpay",
+  "apiVersion": "v1",
+  "baseUrl": "https://fastpay.yahooapis.jp",
+  "operations": {
+    "_abstract_list": {
+      "httpMethod": "GET",
+      "parameters": {
+        "count": {
+          "location": "query",
+          "type": "integer"
+        },
+        "offset": {
+          "location": "query",
+          "type": "integer"
+        }
+      }
+    },
+    "charge.create": {
+      "httpMethod": "POST",
+      "uri": "/v1/charges",
+      "summary": "新しい課金の作成",
+      "parameters": {
+        "amount": {
+          "location": "postField",
+          "type": "integer",
+          "required": true
+        },
+        "customer": {
+          "location": "postField",
+          "type": "string"
+        },
+        "card": {
+          "location": "postField",
+          "type": "string"
+        },
+        "description": {
+          "location": "postField",
+          "type": "string"
+        },
+        "capture": {
+          "location": "postField",
+          "type": "string"
+        }
+      }
+    },
+    "charge.retrieve": {
+      "httpMethod": "GET",
+      "uri": "/v1/charges/{id}",
+      "summary": "課金オブジェクトの取得",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "charge.refund": {
+      "httpMethod": "POST",
+      "uri": "/v1/charges/{id}/refund",
+      "summary": "課金の返金",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "type": "string",
+          "required": true
+        },
+        "amount": {
+          "location": "postField",
+          "type": "integer"
+        }
+      }
+    },
+    "charge.capture": {
+      "httpMethod": "POST",
+      "uri": "/v1/charges/{id}/capture",
+      "summary": "課金の確定",
+      "parameters": {
+        "id": {
+          "location": "uri",
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "charge.all": {
+      "httpMethod": "GET",
+      "uri": "/v1/charges",
+      "summary": "課金履歴のリスト",
+      "parameters": {
+        "count": {
+          "location": "query",
+          "type": "integer"
+        },
+        "offset": {
+          "location": "query",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

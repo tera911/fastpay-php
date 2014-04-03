@@ -1,0 +1,11 @@
+HTTP/1.1 404 Not Found
+Date: Fri, 07 Mar 2014 07:44:17 GMT
+P3P: policyref="http://privacy.yahoo.co.jp/w3c/p3p_jp.xml", CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Cache-Control: private
+Vary: Accept-Encoding
+Content-Length: 114
+Content-Type: application/json
+Age: 2
+Connection: keep-alive
+
+{"error":{"type":"invalid_request_error","message":"No such charge: tok_xxxxxxxxxxxxxx","code":null,"param":"id"}}

@@ -1,0 +1,6 @@
+# vim: set ft=yaml:
+#
+title: FastPay Client Library
+source: src/
+destination: builds/api
+
