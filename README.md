@@ -44,7 +44,7 @@ $charge = $fastpay->charge->create(array(
     "amount" => 666,
     "card" => "tok_xxxxxxxxxxxxxx",
     "description" => "fastpay@example.com",
-    "capture" => false,
+    "capture" => "false",
 ));
 
 // 課金を確定
