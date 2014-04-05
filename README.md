@@ -35,7 +35,7 @@ require 'vendor/autoload.php';
 
 require "vendor/autoload.php";
 
-use Fastpay\Fastpay;
+use FastPay\FastPay;
 
 $fastpay = new FastPay("SecretID");
 
