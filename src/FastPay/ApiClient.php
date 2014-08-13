@@ -13,8 +13,10 @@ namespace FastPay;
 
 use Guzzle\Service\Client;
 use Guzzle\Http\Exception\ClientErrorResponseException;
+use Guzzle\service\Exception\ValidationException;
 use Guzzle\Common\Exception\RuntimeException;
 use FastPay\Error\ConnectionError;
+use FastPay\Error\InvalidRequestError;
 
 class ApiClient extends FastPayObject
 {
@@ -35,6 +37,8 @@ class ApiClient extends FastPayObject
             $command->execute();
             $response = $command->getResponse();
         } catch (ClientErrorResponseException $e) {
+            $response = $e->getResponse();
+        } catch (ValidationException $e) {
             $response = $e->getResponse();
         } catch (RuntimeException $e) {
             throw new ConnectionError($e->getMessage(), $e->getCode());

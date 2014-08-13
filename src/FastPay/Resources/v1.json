@@ -98,6 +98,22 @@
           "type": "integer"
         }
       }
+    },
+    "subscription.activate": {
+      "httpMethod": "POST",
+      "uri": "/v1/subscription/{subscription_id}/activate",
+      "summary": "継続申込の有効化",
+      "parameters": {
+        "subscription_id": {
+          "location": "uri",
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "location": "postField",
+          "type": "string"
+        }
+      }
     }
   }
 }

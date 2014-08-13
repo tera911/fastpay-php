@@ -93,6 +93,7 @@ class ResponseHandler
         $classes = array(
             "charge" => 'FastPay\Api\Charge',
             "card" => 'FastPay\Api\Card',
+            "subscription" => 'FastPay\Api\Subscription',
         );
 
         return array_key_exists($name, $classes) ?  $classes[$name] : 'FastPay\FastPayObject';

@@ -14,6 +14,7 @@ namespace FastPay;
 use Guzzle\Service\Client;
 use Guzzle\Service\Description\ServiceDescription;
 use FastPay\Api\Charge;
+use FastPay\Api\Subscription;
 
 class FastPay
 {
@@ -40,6 +41,11 @@ class FastPay
     public function charge()
     {
         return new Charge($this->client);
+    }
+
+    public function subscription()
+    {
+        return new Subscription($this->client);
     }
 
     public function setUrl($url)
