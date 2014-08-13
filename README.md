@@ -16,7 +16,7 @@ composer.jsonファイルに以下を追記してください
 ```json:composer.json
 {
   "require": {
-    "fastpay/fastpay-php":"1.0.0"
+    "fastpay/fastpay-php":"~1.1.0"
   }
 }
 ```
