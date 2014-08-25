@@ -23,7 +23,7 @@ class SubscriptionTest extends \FastPay\Tests\FastPayTestCase
             "subscription_id" => "subs_xxxxxxxxxxxxxxxxxxxxxxxx",
             "description" => "fastpay@example.com",
         );
-        $actual = $this->fastpay->subscription()->activate($params);
+        $actual = $this->fastpay->subscription->activate($params);
         $this->assertInstanceOf("FastPay\Api\Subscription", $actual);
         $this->assertRegExp('/^subs_[A-Za-z0-9]+$/', $actual->id);
 

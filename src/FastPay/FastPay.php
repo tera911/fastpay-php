@@ -21,7 +21,7 @@ class FastPay
     private $apiVersion = "v1";
     private $client = null;
 
-    const CLIENT_VERSION = "1.0.0";
+    const CLIENT_VERSION = "1.1.1";
 
     public function __construct($secret = null)
     {
@@ -32,7 +32,7 @@ class FastPay
 
     public function __get($action)
     {
-        $allowedActions = array("charge");
+        $allowedActions = array("charge", "subscription");
         if (in_array($action, $allowedActions)) {
             return $this->{$action}($this);
         }
