@@ -8,5 +8,5 @@ Content-Type: application/json
 Age: 16
 Connection: keep-alive
 
-{"id":"subs_T5yDLS5u4cgWYTzlL0AjRZ9u","object":"subscription","display_id":"LMRDJ4YMYUVRNCFI5FE2RJWNT4","status":"active","description":null,"suspended_date":null,"activation_date":"2014-08-08 11:31:06","created":1407401395,"plan":{"id":"plan_xxxxxxxxxxxxxxxxxxxxxxxx","object":"plan","livemode":"1","name":"\u3077\u3077\u3077\u3077\u30d7\u30e9\u30f3","interval":"month","interval_count":"1","trial_count":"0","amount":"666"}}
+{"id":"subs_T5yDLS5u4cgWYTzlL0AjRZ9u","object":"subscription","display_id":"LMRDJ4YMYUVRNCFI5FE2RJWNT4","status":"active","description":null,"suspended_date":null,"activation_date":"2014-08-08 11:31:06","cancelled_date":null,"created":1407401395,"plan":{"id":"plan_xxxxxxxxxxxxxxxxxxxxxxxx","object":"plan","livemode":"1","name":"\u3077\u3077\u3077\u3077\u30d7\u30e9\u30f3","interval":"month","interval_count":"1","trial_count":"0","amount":"666"}}
 

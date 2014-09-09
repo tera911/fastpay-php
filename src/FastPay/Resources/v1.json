@@ -114,6 +114,22 @@
           "type": "string"
         }
       }
+    },
+    "subscription.cancel": {
+      "httpMethod": "POST",
+      "uri": "/v1/subscription/{subscription_id}/cancel",
+      "summary": "継続申込の解約",
+      "parameters": {
+        "subscription_id": {
+          "location": "uri",
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "location": "postField",
+          "type": "string"
+        }
+      }
     }
   }
 }

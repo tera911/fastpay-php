@@ -19,4 +19,9 @@ class Subscription extends ApiClient
     {
         return $this->request($this->createCommand("activate"), $fields);
     }
+
+    public function cancel(array $fields = array())
+    {
+        return $this->request($this->createCommand("cancel"), $fields);
+    }
 }

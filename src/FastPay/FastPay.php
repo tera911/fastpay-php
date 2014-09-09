@@ -21,7 +21,7 @@ class FastPay
     private $apiVersion = "v1";
     private $client = null;
 
-    const CLIENT_VERSION = "1.1.1";
+    const CLIENT_VERSION = "1.2.0";
 
     public function __construct($secret = null)
     {

@@ -30,4 +30,17 @@ class SubscriptionTest extends \FastPay\Tests\FastPayTestCase
         //$this->assertPost("/subscription/{$params[subscription_id]}/activate", $params);
         $this->assertPost("/subscription/subs_xxxxxxxxxxxxxxxxxxxxxxxx/activate", array("description" => "fastpay@example.com"));
     }
+
+    public function testCancel()
+    {
+        $this->setMock("subscription/cancel");
+        $params = array(
+            "subscription_id" => "subs_xxxxxxxxxxxxxxxxxxxxxxxx",
+            "description" => "fastpay@example.com",
+        );
+        $actual = $this->fastpay->subscription->cancel($params);
+        $this->assertInstanceOf("FastPay\Api\Subscription", $actual);
+
+        $this->assertPost("/subscription/subs_xxxxxxxxxxxxxxxxxxxxxxxx/cancel", array("description" => "fastpay@example.com"));
+    }
 }
