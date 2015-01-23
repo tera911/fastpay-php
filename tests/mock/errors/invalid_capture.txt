@@ -1,0 +1,11 @@
+HTTP/1.1 402 Payment Required
+Date: Thu, 22 Jan 2015 11:16:45 GMT
+P3P: policyref="http://privacy.yahoo.co.jp/w3c/p3p_jp.xml", CP="CAO DSP COR CUR ADM DEV TAI PSA PSD IVAi IVDi CONi TELo OTPi OUR DELi SAMi OTRi UNRi PUBi IND PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA POL HEA PRE GOV"
+Cache-Control: private
+Vary: Accept-Encoding
+Content-Length: 101
+Content-Type: application/json
+Age: 2
+Connection: keep-alive
+
+{"error":{"type":"invalid_request_error","message":"Invalid boolean: 0","code":"","param":"capture"}}

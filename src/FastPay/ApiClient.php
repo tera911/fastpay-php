@@ -31,6 +31,15 @@ class ApiClient extends FastPayObject
 
     public function request($command, array $fields = array())
     {
+        foreach($fields as $key =>$value) {
+            if($value === true) {
+                $fields[$key] = "true";
+            }
+            if($value === false) {
+                $fields[$key] = "false";
+            }
+        }
+
         $command = $this->client->getCommand($command, $fields);
         $handler = new ResponseHandler($this->client);
         try {
@@ -38,13 +47,11 @@ class ApiClient extends FastPayObject
             $response = $command->getResponse();
         } catch (ClientErrorResponseException $e) {
             $response = $e->getResponse();
-        } catch (ValidationException $e) {
-            $response = $e->getResponse();
         } catch (RuntimeException $e) {
             throw new ConnectionError($e->getMessage(), $e->getCode());
         }
 
-        return $handler->parse($response->getStatusCode(), $response->getBody(true));
+        return $handler->parse($response->getStatusCode(), trim($response->getBody(true)));
     }
 
     public function create(array $fields)

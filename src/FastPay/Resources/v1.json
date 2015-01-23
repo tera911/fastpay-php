@@ -7,12 +7,10 @@
       "httpMethod": "GET",
       "parameters": {
         "count": {
-          "location": "query",
-          "type": "integer"
+          "location": "query"
         },
         "offset": {
-          "location": "query",
-          "type": "integer"
+          "location": "query"
         }
       }
     },
@@ -22,25 +20,19 @@
       "summary": "新しい課金の作成",
       "parameters": {
         "amount": {
-          "location": "postField",
-          "type": "integer",
-          "required": true
+          "location": "postField"
         },
         "customer": {
-          "location": "postField",
-          "type": "string"
+          "location": "postField"
         },
         "card": {
-          "location": "postField",
-          "type": "string"
+          "location": "postField"
         },
         "description": {
-          "location": "postField",
-          "type": "string"
+          "location": "postField"
         },
         "capture": {
-          "location": "postField",
-          "type": "string"
+          "location": "postField"
         }
       }
     },
@@ -50,9 +42,7 @@
       "summary": "課金オブジェクトの取得",
       "parameters": {
         "id": {
-          "location": "uri",
-          "type": "string",
-          "required": true
+          "location": "uri"
         }
       }
     },
@@ -62,13 +52,10 @@
       "summary": "課金の返金",
       "parameters": {
         "id": {
-          "location": "uri",
-          "type": "string",
-          "required": true
+          "location": "uri"
         },
         "amount": {
-          "location": "postField",
-          "type": "integer"
+          "location": "postField"
         }
       }
     },
@@ -78,9 +65,7 @@
       "summary": "課金の確定",
       "parameters": {
         "id": {
-          "location": "uri",
-          "type": "string",
-          "required": true
+          "location": "uri"
         }
       }
     },
@@ -90,12 +75,10 @@
       "summary": "課金履歴のリスト",
       "parameters": {
         "count": {
-          "location": "query",
-          "type": "integer"
+          "location": "query"
         },
         "offset": {
-          "location": "query",
-          "type": "integer"
+          "location": "query"
         }
       }
     },
@@ -105,13 +88,10 @@
       "summary": "継続申込の有効化",
       "parameters": {
         "subscription_id": {
-          "location": "uri",
-          "type": "string",
-          "required": true
+          "location": "uri"
         },
         "description": {
-          "location": "postField",
-          "type": "string"
+          "location": "postField"
         }
       }
     },
@@ -121,13 +101,10 @@
       "summary": "継続申込の解約",
       "parameters": {
         "subscription_id": {
-          "location": "uri",
-          "type": "string",
-          "required": true
+          "location": "uri"
         },
         "description": {
-          "location": "postField",
-          "type": "string"
+          "location": "postField"
         }
       }
     }

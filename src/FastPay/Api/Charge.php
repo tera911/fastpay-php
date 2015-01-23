@@ -20,9 +20,13 @@ class Charge extends ApiClient
         return $this->request($this->createCommand("all"), $fields);
     }
 
-    public function refund()
+    public function refund($amount = null)
     {
-        return $this->request($this->createCommand("refund"), array("id" => $this->id));
+        $fields = array("id" => $this->id);
+        if (!is_null($amount)) {
+            $fields["amount"] = $amount;
+        }
+        return $this->request($this->createCommand("refund"), $fields);
     }
 
     public function capture()

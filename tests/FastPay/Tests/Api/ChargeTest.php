@@ -87,6 +87,23 @@ class ChargeTest extends \FastPay\Tests\FastPayTestCase
         $this->assertPost("/charges/ch_4Iv1CIKeIJQiF1Yg1tjWZejT/refund");
     }
 
+    public function testChargePartialRefund()
+    {
+        $this->setMock("charges/create");
+        $charge = $this->fastpay->charge->create(array(
+            "amount" => 7777,
+            "card" => "tok_xxxxxxxxxxxxxxxxxxxxx",
+            "description" => "fastpay@example.com",
+        ));
+
+        $this->setMock("charges/refund");
+        $actual = $charge->refund(777);
+
+        $this->assertRegExp('/^card_[A-Za-z0-9]+$/', $actual->card->id);
+
+        $this->assertPost("/charges/ch_4Iv1CIKeIJQiF1Yg1tjWZejT/refund");
+    }
+
     public function testChargeCapture()
     {
         $this->setMock("charges/create");
@@ -132,6 +149,25 @@ class ChargeTest extends \FastPay\Tests\FastPayTestCase
         } catch (InvalidRequestError $e) {
             $this->assertSame(404, $e->getHttpStatus());
             $this->assertSame("Status:404, Body:$body", $e->getMessage());
+            $this->assertEquals(json_decode($body), $e->getHttpBody());
+        }
+    }
+
+    public function testChargeCreateValidationError()
+    {
+        $this->setMock("errors/invalid_capture");
+        $body = '{"error":{"type":"invalid_request_error","message":"Invalid boolean: 0","code":"","param":"capture"}}';
+        try {
+            $this->fastpay->charge->create(array(
+                "amount" => 7777,
+                "card" => "tok_xxxxxxxxxxxxxxxxxxxxx",
+                "description" => "fastpay@example.com",
+                "capture" => 0,
+            ));
+            $this->fail("invalid capture");
+        } catch (InvalidRequestError $e) {
+            $this->assertSame(402, $e->getHttpStatus());
+            $this->assertSame("Status:402, Body:$body", $e->getMessage());
             $this->assertEquals(json_decode($body), $e->getHttpBody());
         }
     }
