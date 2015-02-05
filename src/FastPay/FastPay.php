@@ -21,7 +21,7 @@ class FastPay
     private $apiVersion = "v1";
     private $client = null;
 
-    const CLIENT_VERSION = "1.2.0";
+    const CLIENT_VERSION = "1.2.2";
 
     public function __construct($secret = null)
     {
@@ -67,6 +67,14 @@ class FastPay
         return $this;
     }
 
+    public function setPluginUserAgent($pluginName, $pluginVersion)
+    {
+        $this->client->setUserAgent(
+            sprintf('%s/%s FastPay-php/%', $pluginName, $pluginVersion, FastPay::CLIENT_VERSION), true
+        );
+        return $this;
+    }
+
     public function getClient()
     {
         return $this->client;
@@ -76,6 +84,6 @@ class FastPay
     {
         $this->client
             ->setDescription(ServiceDescription::factory(__DIR__ . "/Resources/{$this->apiVersion}.json"))
-            ->setUserAgent("FastPay-php v" . FastPay::CLIENT_VERSION);
+            ->setUserAgent("FastPay-php/" . FastPay::CLIENT_VERSION, true);
     }
 }
